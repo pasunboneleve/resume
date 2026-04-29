@@ -9,7 +9,8 @@
     #link("mailto:dmlvianna@gmail.com")[#strong[#text("dmlvianna@gmail.com")]] \
     #link("https://github.com/pasunboneleve")[#text("github.com/pasunboneleve")] \
     #link("https://boneleve.blog")[#text("boneleve.blog")]
-
+  ],
+  skills: [
     = TECHNICAL SKILLS
 
     #v(8pt)

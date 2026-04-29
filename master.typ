@@ -6,6 +6,7 @@
   doc,
   author: "Daniel Vianna",
   contact: none,
+  skills: none,
   projects: none,
 ) = context {
   grid(
@@ -19,6 +20,8 @@
       #set text(font: "Open Sans", size: 10pt)
       #set par(justify: false, leading: 0.52em)
       #contact
+      #skills
+      #colbreak()
       #projects
     ],
   )
@@ -27,6 +30,7 @@
 #let conf(
   author: "Daniel Vianna",
   contact: none,
+  skills: none,
   projects: none,
   text-font: "Open Sans",
   doc,
@@ -105,5 +109,11 @@
 
   show link: it => underline(stroke: luma(80%), text(fill: navy)[#it])
 
-  page-grid(doc, author: author, contact: contact, projects: projects)
+  page-grid(
+    doc,
+    author: author,
+    contact: contact,
+    skills: skills,
+    projects: projects,
+  )
 }
