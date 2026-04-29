@@ -4,6 +4,7 @@
 
 === Systems translator and operational optimiser
 
+#set pad(bottom: 10pt)
 = SUMMARY
 
 I make messy systems legible, evolvable, and cheaper to change.
@@ -12,6 +13,7 @@ I reverse engineer technical and operational workflows, expose hidden constraint
 
 My work combines discovery, stakeholder translation, and hands-on systems design to create scalable pathways that enable teams to operate more effectively.
 
+#set pad(bottom: 10pt)
 = CORE COMPETENCIES
 
 - *Systems Discovery & Process Mapping* – reverse engineering workflows, surfacing hidden constraints.
