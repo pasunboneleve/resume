@@ -90,7 +90,7 @@
 #let conf(
   author: "Daniel Vianna",
   contact: none,
-  text-font: "Libertinus Serif",
+  text-font: "Open Sans",
   doc,
 ) = {
   set page(
@@ -120,11 +120,10 @@
 
   show heading.where(level: 1): set text(
     font: "Open Sans",
-    size: 11pt,
-    weight: "extralight",
+    size: 10pt,
+    weight: "bold",
     fill: blue,
   )
-  show heading.where(level: 1): smallcaps
   show heading.where(level: 1): it => pad(top: 20pt, it)
 
   show heading.where(level: 2): it => {

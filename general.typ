@@ -8,8 +8,7 @@
     #link("https://github.com/pasunboneleve")[#text("github.com/pasunboneleve")] \
     #link("https://boneleve.blog")[#text("boneleve.blog")]
 
-    #v(18pt)
-    #text(fill: blue, weight: "bold")[TECHNICAL SKILLS]
+    = TECHNICAL SKILLS
 
     #v(8pt)
     #text(fill: luma(45%))[
