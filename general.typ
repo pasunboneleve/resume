@@ -7,6 +7,28 @@
     #link("mailto:dmlvianna@gmail.com")[#strong[#text("dmlvianna@gmail.com")]] \
     #link("https://github.com/pasunboneleve")[#text("github.com/pasunboneleve")] \
     #link("https://boneleve.blog")[#text("boneleve.blog")]
+
+    #v(18pt)
+    #text(fill: blue, weight: "bold")[TECHNICAL SKILLS]
+
+    #v(8pt)
+    #text(fill: luma(45%))[
+      #strong[Languages:] Python (Expert), SQL (Expert), Scala, TypeScript, Haskell, Bash.
+
+      #strong[Developer Experience:] CI/CD design, local testing workflows, service boundary design.
+
+      #strong[Cloud & Infrastructure:] GCP (GKE, Cloud Run, BigQuery, Pub/Sub), AWS (S3, SQS, Lambda, RDS), Kubernetes.
+
+      #strong[Infrastructure as Code:] Terraform, Helm, Docker.
+
+      #strong[Observability:] OpenTelemetry, Prometheus, Honeycomb, metrics and distributed tracing.
+
+      #strong[CI/CD & Automation:] GitHub Actions, Google Cloud Build, GitOps workflows.
+
+      #strong[Practices:] TDD, Idempotency, Testable Architecture.
+
+      #strong[Product & Delivery:] Stakeholder discovery, workflow mapping, operational process design, experimentation support.
+    ]
   ],
   doc,
 )
