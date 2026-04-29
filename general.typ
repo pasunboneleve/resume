@@ -116,4 +116,4 @@ PhD, Neuroscience | University of São Paulo
 
 MSc, Neuroscience | University of São Paulo
 
-BPsych, Psychology | University of São Paulo
+BPsych, Psychology | PUC-Rio
