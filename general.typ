@@ -1,5 +1,7 @@
 #import "master.typ": conf
 
+#let skill-label(body) = box(strong(body))
+
 #show: doc => conf(
   contact: [
     Mentone, Vic 3194 \
@@ -13,21 +15,21 @@
     #v(8pt)
     #text(fill: luma(45%))[
       #set par(justify: true)
-      #strong[Languages:] Python (Expert), SQL (Expert), Scala, TypeScript, Haskell, Bash.
+      #skill-label[Languages:] Python (Expert), SQL (Expert), Scala, TypeScript, Haskell, Bash.
 
-      #strong[Developer Experience:] CI/CD design, local testing workflows, service boundary design.
+      #skill-label[Developer Experience:] CI/CD design, local testing workflows, service boundary design.
 
-      #strong[Cloud & Infrastructure:] GCP (GKE, Cloud Run, BigQuery, Pub/Sub), AWS (S3, SQS, Lambda, RDS), Kubernetes.
+      #skill-label[Cloud & Infrastructure:] GCP (GKE, Cloud Run, BigQuery, Pub/Sub), AWS (S3, SQS, Lambda, RDS), Kubernetes.
 
-      #strong[Infrastructure as Code:] Terraform, Helm, Docker.
+      #skill-label[Infrastructure as Code:] Terraform, Helm, Docker.
 
-      #strong[Observability:] OpenTelemetry, Prometheus, Honeycomb, metrics and distributed tracing.
+      #skill-label[Observability:] OpenTelemetry, Prometheus, Honeycomb, metrics and distributed tracing.
 
-      #strong[CI/CD & Automation:] GitHub Actions, Google Cloud Build, GitOps workflows.
+      #skill-label[CI/CD & Automation:] GitHub Actions, Google Cloud Build, GitOps workflows.
 
-      #strong[Practices:] TDD, Idempotency, Testable Architecture.
+      #skill-label[Practices:] TDD, Idempotency, Testable Architecture.
 
-      #strong[Product & Delivery:] Stakeholder discovery, workflow mapping, operational process design, experimentation support.
+      #skill-label[Product & Delivery:] Stakeholder discovery, workflow mapping, operational process design, experimentation support.
     ]
   ],
   doc,
