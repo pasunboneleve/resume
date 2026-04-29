@@ -40,6 +40,13 @@
     fill: blue
 )
 
+#show heading.where(level:4): set text(
+    font: "Open Sans",
+    size: 8pt,
+    weight: "extralight",
+    fill: luma(20%)
+)
+
 #title()
 
 === Systems translator and operational optimiser
@@ -59,7 +66,7 @@
 
 = PROFESSIONAL EXPERIENCE
 
-== PaidRight — Senior Data Engineer (Platform Engineering)
+== *PaidRight* — _Senior Data Engineer (Platform Engineering)_
 
 ==== Nov 2022 - Oct 2025 | Remote (GCP)
 
