@@ -8,6 +8,7 @@
   contact: none,
   skills: none,
   projects: none,
+  education: none,
 ) = context {
   grid(
     columns: (1fr, 1fr, 1fr),
@@ -23,6 +24,8 @@
       #skills
       #colbreak()
       #projects
+      #colbreak()
+      #education
     ],
   )
 }
@@ -32,6 +35,7 @@
   contact: none,
   skills: none,
   projects: none,
+  education: none,
   text-font: "Open Sans",
   doc,
 ) = {
@@ -67,7 +71,7 @@
     weight: "bold",
     fill: blue,
   )
-  show heading.where(level: 1): it => pad(top: 20pt, it)
+  show heading.where(level: 1): it => pad(top: 20pt, bottom: -8pt, it)
 
   show heading.where(level: 2): it => {
     if not it.body.has("children") { return it }
@@ -115,5 +119,6 @@
     contact: contact,
     skills: skills,
     projects: projects,
+    education: education,
   )
 }

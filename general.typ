@@ -48,6 +48,15 @@
 
     Service delivery patterns are often repeated across projects. These reusable AWS and GCP templates standardise infrastructure, CI/CD, and deployment workflows, accelerating project startup while reducing boilerplate and operational inconsistency.
   ],
+  education: [
+    = EDUCATION
+
+    PhD, Neuroscience | University of São Paulo
+
+    MSc, Neuroscience | University of São Paulo
+
+    BPsych, Psychology | PUC‑Rio
+  ],
   doc,
 )
 
@@ -141,11 +150,3 @@ The RACGP is the main certification body in Australia for General Practitioners.
 - RACGP membership is renewed annually through mail sent to known GP practices and practitioners. I broadened the discovery of targets by rewriting the queries used in the data preparation. I discovered large numbers of targets that were formerly ignored.
 
 - Call operators made most of the member’s data entry, often copying it from one system to another manually. I automated the data transfers via direct SQL queries, skipping GUIs. Data was validated and corrected before mailouts were made, improving correctness and reducing toil.
-
-= EDUCATION
-
-PhD, Neuroscience | University of São Paulo
-
-MSc, Neuroscience | University of São Paulo
-
-BPsych, Psychology | PUC‑Rio
