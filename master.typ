@@ -39,6 +39,8 @@
   text-font: "Open Sans",
   doc,
 ) = {
+  let after-level-one = state("after-level-one", false)
+
   set page(
     paper: "a4",
     header: context {
@@ -71,7 +73,15 @@
     weight: "bold",
     fill: blue,
   )
-  show heading.where(level: 1): it => pad(top: 20pt, bottom: -8pt, it)
+  show heading.where(level: 1): it => {
+    after-level-one.update(true)
+    pad(top: 20pt, it)
+  }
+
+  show par: it => {
+    after-level-one.update(false)
+    it
+  }
 
   show heading.where(level: 2): it => {
     if not it.body.has("children") { return it }
@@ -101,7 +111,11 @@
     }
     styled-children.join()
   }
-  show heading.where(level: 2): it => pad(top: 10pt, it)
+  show heading.where(level: 2): it => context {
+    let top = if after-level-one.get() { -8pt } else { 10pt }
+    after-level-one.update(false)
+    pad(top: top, it)
+  }
 
   show heading.where(level: 4): set text(
     font: "Open Sans",

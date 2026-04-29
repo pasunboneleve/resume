@@ -1,5 +1,15 @@
 #import "master.typ": conf
 
+#let section-title(body) = block[
+  #text(
+    font: "Open Sans",
+    size: 10pt,
+    weight: "bold",
+    fill: blue,
+    body,
+  )
+]
+
 #let skill-label(body) = box(strong(body))
 
 #show: doc => conf(
@@ -11,7 +21,7 @@
     #link("https://boneleve.blog")[#text("boneleve.blog")]
   ],
   skills: [
-    = TECHNICAL SKILLS
+    #section-title[TECHNICAL SKILLS]
 
     #v(8pt)
     #text(fill: luma(45%))[
@@ -34,7 +44,7 @@
     ]
   ],
   projects: [
-    = PROJECTS
+    #section-title[PROJECTS]
 
     == #link("https://github.com/pasunboneleve/devloop")[devloop] — Local development orchestrator (Rust)
 
@@ -49,7 +59,7 @@
     Service delivery patterns are often repeated across projects. These reusable AWS and GCP templates standardise infrastructure, CI/CD, and deployment workflows, accelerating project startup while reducing boilerplate and operational inconsistency.
   ],
   education: [
-    = EDUCATION
+    #section-title[EDUCATION]
 
     PhD, Neuroscience | University of São Paulo
 
