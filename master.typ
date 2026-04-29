@@ -165,7 +165,7 @@
   )
   show heading.where(level: 4): it => pad(top: -2pt, bottom: 10pt, it)
 
-  show link: it => underline(text(fill: navy)[#it])
+  show link: it => underline(stroke: luma(80%), text(fill: navy)[#it])
 
   page-grid(doc, author: author, contact: contact)
 }
