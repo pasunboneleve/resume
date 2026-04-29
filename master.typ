@@ -1,11 +1,4 @@
 #let my-name = "Daniel Vianna"
-#let summary = [
-    I make messy systems legible, evolvable, and cheaper to change.
-
-    I reverse engineer technical and operational workflows, expose hidden constraints, and redesign systems to reduce friction, accelerate feedback, and improve adaptability.
-
-    My work combines discovery, stakeholder translation, and hands-on systems design to create scalable pathways that enable teams to operate more effectively.
-]
 #set page(
     paper: "a4",
     header: context {
@@ -25,7 +18,6 @@
 #set document(
     title: my-name,
     author: my-name,
-    description: summary,
     date: auto
 )
 #set heading(
@@ -48,13 +40,23 @@
     fill: luma(20%)
 )
 
+#let subheading(title) = text(
+    style: "italic",
+    size: 12pt,
+    fill: luma(5%)
+)[#title]
+
 #title()
 
 === Systems translator and operational optimiser
 
 = SUMMARY
 
-#summary
+I make messy systems legible, evolvable, and cheaper to change.
+
+I reverse engineer technical and operational workflows, expose hidden constraints, and redesign systems to reduce friction, accelerate feedback, and improve adaptability.
+
+My work combines discovery, stakeholder translation, and hands-on systems design to create scalable pathways that enable teams to operate more effectively.
 
 = CORE COMPETENCIES
 
@@ -67,7 +69,7 @@
 
 = PROFESSIONAL EXPERIENCE
 
-== PaidRight — _Senior Data Engineer (Platform Engineering)_
+== PaidRight — #subheading([Senior Data Engineer (Platform Engineering)])
 
 ==== Nov 2022 - Oct 2025 | Remote (GCP)
 
@@ -79,7 +81,7 @@ PaidRight is a SaaS platform (GCP) identifying payroll compliance issues through
 
 - The web frontend was slow and buggy. I added OpenTelemetry to the frontend’s client and server. This observability made it possible to pinpoint the performance bottlenecks in the code and fix them.
 
-== Daisee — _Lead Software Engineer_
+== Daisee — #subheading([Lead Software Engineer])
 ==== Apr 2021 - Oct 2022 | Remote (AWS)
 
 Daisee is a SaaS voice analytics platform processing large volumes of audio data into structured insights.
@@ -90,7 +92,7 @@ Daisee is a SaaS voice analytics platform processing large volumes of audio data
 
 - Data Science algorithms were reimplemented by Engineering, creating a responsibility gap when outcomes didn’t match expectations. I created an API for Data Science so their implementation would run in production without Engineering interference. Friction between these teams ceased to be a problem.
 
-== AusNet Services — _Operations and Analytics Engineer_
+== AusNet Services — #subheading([Operations and Analytics Engineer])
 ==== Jul 2018 - Mar 2021 | Melbourne
 
 AusNet distributes electricity to over one million Victorian premises, operating large-scale metering and network data systems (> 1 Petabyte).
@@ -101,7 +103,7 @@ AusNet distributes electricity to over one million Victorian premises, operating
 
 - Estimated voltage at substation can vary abruptly each day, making prioritisation difficult. I designed a sliding window smoothing algorithm that privileged recent estimates over older ones. This made estimates change slowly over time, giving engineers a more stable signal on which to prioritise their work.
 
-== Victorian Centre for Data Insights — _Senior Data Analyst_
+== Victorian Centre for Data Insights — #subheading([Senior Data Analyst])
 ==== Jul 2017 - Jun 2018 | Melbourne
 
 VCDI was designed as an internal consultancy for the Victorian state government. It existed under the Department of Premier and Cabinet.
@@ -112,7 +114,7 @@ VCDI was designed as an internal consultancy for the Victorian state government.
 
 - The analytics grew quickly with junior hires. I mentored new hires on the use of version control, automated tests and modularising code. This improved code quality and reproducibility.
 
-== Bunnings — _Data Analyst_
+== Bunnings — #subheading([Data Analyst])
 ==== Jun 2013 - Jul 2017 | Melbourne
 
 Bunnings is a major home improvement and hardware retail with presence in Australia and New Zealand.
@@ -124,7 +126,7 @@ Bunnings needed to compare different forklift models on their relative safety.
 
 - I worked with external vendors to acquire odometer readings so incident counts could be normalised against actual forklift usage. The more complex forklift model was shown to not differ in safety outcomes to the cheaper ones, preventing unnecessary ~\$15-20M capital and rollout costs.
 
-== Royal Australian College of GPs — _Data Analyst_
+== Royal Australian College of GPs — #subheading([Data Analyst])
 ==== Sep 2011 - Jun 2013 | Melbourne
 
 The RACGP is the main certification body in Australia for General Practitioners.
@@ -137,33 +139,23 @@ The RACGP is the main certification body in Australia for General Practitioners.
 
 = PROJECTS
 
-== devloop — _Local development orchestrator (Rust)_
+== devloop — #subheading([Local development orchestrator (Rust)])
 GitHub
 
-Local development of distributed systems required manual orchestration and brittle scripts.
+Developer workflows rely on many disconnected tools, but orchestration between them is sparse. Devloop is a config-driven CLI that coordinates processes, propagates state, and automates routine development workflows so developers can focus on building rather than orchestration.
 
-  Designed a config-driven system that coordinates independent services and propagates state between processes.
-
-  Enabled fast, consistent local feedback loops for distributed systems under active development.
-
-== dress-rehearsal — _Infrastructure validation harness (Rust)_
+== dress-rehearsal — #subheading([Infrastructure validation harness (Rust)])
 GitHub
 
-Infrastructure changes were validated late, with unclear failure modes and manual cleanup.
+Infrastructure is often deployed iteratively but rarely validated through full creation-to-destruction lifecycles. Dress-rehearsal automates deploy → verify → destroy workflows using isolated state, preserving logs and reducing production risk before release.
 
-  Built a deploy → verify → destroy workflow with isolated state and reproducible execution.
-
-  Made infrastructure behaviour testable before release and reduced risk of production failures.
-
-== Cloud service delivery templates — _(AWS & GCP)_
+== Cloud service delivery templates — #subheading([(AWS & GCP)])
  AWS  GCP
 
-Service setup and delivery patterns were inconsistent and repeated across projects.
-
-  Designed reusable templates covering infrastructure, CI/CD, and deployment workflows.
-
-  Standardised service delivery and reduced setup time for new systems.
+Service delivery patterns are often repeated across projects. These reusable AWS and GCP templates standardise infrastructure, CI/CD, and deployment workflows, accelerating project startup while reducing boilerplate and operational inconsistency.
 
 = EDUCATION
 
 PhD, Neuroscience | University of São Paulo
+MSc, Neuroscience | University of São Paulo
+BPsych, Psychology | University of São Paulo
