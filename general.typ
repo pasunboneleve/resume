@@ -1,5 +1,4 @@
 #import "master.typ": conf
-#import "master.typ": subheading
 
 #show: conf
 
@@ -24,7 +23,7 @@ My work combines discovery, stakeholder translation, and hands-on systems design
 
 = PROFESSIONAL EXPERIENCE
 
-== PaidRight — #subheading([Senior Data Engineer (Platform Engineering)])
+== PaidRight — Senior Data Engineer (Platform Engineering)
 
 ==== Nov 2022 - Oct 2025 | Remote (GCP)
 
@@ -36,7 +35,7 @@ PaidRight is a SaaS platform (GCP) identifying payroll compliance issues through
 
 - The web frontend was slow and buggy. I added OpenTelemetry to the frontend’s client and server. This observability made it possible to pinpoint the performance bottlenecks in the code and fix them.
 
-== Daisee — #subheading([Lead Software Engineer])
+== Daisee — Lead Software Engineer
 ==== Apr 2021 - Oct 2022 | Remote (AWS)
 
 Daisee is a SaaS voice analytics platform processing large volumes of audio data into structured insights.
@@ -47,7 +46,7 @@ Daisee is a SaaS voice analytics platform processing large volumes of audio data
 
 - Data Science algorithms were reimplemented by Engineering, creating a responsibility gap when outcomes didn’t match expectations. I created an API for Data Science so their implementation would run in production without Engineering interference. Friction between these teams ceased to be a problem.
 
-== AusNet Services — #subheading([Operations and Analytics Engineer])
+== AusNet Services — Operations and Analytics Engineer
 ==== Jul 2018 - Mar 2021 | Melbourne
 
 AusNet distributes electricity to over one million Victorian premises, operating large-scale metering and network data systems (> 1 Petabyte).
@@ -58,7 +57,7 @@ AusNet distributes electricity to over one million Victorian premises, operating
 
 - Estimated voltage at substation can vary abruptly each day, making prioritisation difficult. I designed a sliding window smoothing algorithm that privileged recent estimates over older ones. This made estimates change slowly over time, giving engineers a more stable signal on which to prioritise their work.
 
-== Victorian Centre for Data Insights — #subheading([Senior Data Analyst])
+== Victorian Centre for Data Insights — Senior Data Analyst
 ==== Jul 2017 - Jun 2018 | Melbourne
 
 VCDI was designed as an internal consultancy for the Victorian state government. It existed under the Department of Premier and Cabinet.
@@ -69,7 +68,7 @@ VCDI was designed as an internal consultancy for the Victorian state government.
 
 - The analytics grew quickly with junior hires. I mentored new hires on the use of version control, automated tests and modularising code. This improved code quality and reproducibility.
 
-== Bunnings — #subheading([Data Analyst])
+== Bunnings — Data Analyst
 ==== Jun 2013 - Jul 2017 | Melbourne
 
 Bunnings is a major home improvement and hardware retail with presence in Australia and New Zealand.
@@ -81,7 +80,7 @@ Bunnings needed to compare different forklift models on their relative safety.
 
 - I worked with external vendors to acquire odometer readings so incident counts could be normalised against actual forklift usage. The more complex forklift model was shown to not differ in safety outcomes to the cheaper ones, preventing unnecessary ~\$15-20M capital and rollout costs.
 
-== Royal Australian College of GPs — #subheading([Data Analyst])
+== Royal Australian College of GPs — Data Analyst
 ==== Sep 2011 - Jun 2013 | Melbourne
 
 The RACGP is the main certification body in Australia for General Practitioners.
@@ -94,18 +93,18 @@ The RACGP is the main certification body in Australia for General Practitioners.
 
 = PROJECTS
 
-== #link("https://github.com/pasunboneleve/devloop")[devloop] — #subheading([Local development orchestrator (Rust)])
+== #link("https://github.com/pasunboneleve/devloop")[devloop] — Local development orchestrator (Rust)
 
 
 Developer workflows rely on many disconnected tools, but orchestration between them is sparse. Devloop is a config-driven CLI that coordinates processes, propagates state, and automates routine development workflows so developers can focus on building rather than orchestration.
 
-== #link("https://github.com/pasunboneleve/dress-rehearsal")[dress-rehearsal] — #subheading([Infrastructure validation harness (Rust)])
+== #link("https://github.com/pasunboneleve/dress-rehearsal")[dress-rehearsal] — Infrastructure validation harness (Rust)
 
 
 Infrastructure is often deployed iteratively but rarely validated through full creation-to-destruction lifecycles. Dress-rehearsal automates deploy → verify → destroy workflows using isolated state, preserving logs and reducing production risk before release.
 
-== cloud service delivery templates — #subheading([ #link("https://github.com/pasunboneleve/aws-service-delivery-template")[AWS] & #link("https://github.com/pasunboneleve/gcp-service-delivery-template")[GCP]
-])
+== cloud service delivery templates — #link("https://github.com/pasunboneleve/aws-service-delivery-template")[AWS] & #link("https://github.com/pasunboneleve/gcp-service-delivery-template")[GCP]
+
 
 Service delivery patterns are often repeated across projects. These reusable AWS and GCP templates standardise infrastructure, CI/CD, and deployment workflows, accelerating project startup while reducing boilerplate and operational inconsistency.
 
