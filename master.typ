@@ -1,3 +1,92 @@
+#let row-marker(index) = label("page-grid-row-" + str(index))
+
+#let row-page(index) = {
+  let marker = row-marker(index)
+  let hits = query(marker)
+
+  if hits.len() > 0 {
+    hits.first().location().page()
+  } else {
+    1
+  }
+}
+
+#let row-span(index) = {
+  let page = row-page(index)
+
+  if page == 1 {
+    2
+  } else {
+    3
+  }
+}
+
+#let content-rows(doc) = {
+  let children = if doc.has("children") {
+    doc.children
+  } else {
+    (doc,)
+  }
+  let rows = ()
+  let row = ()
+
+  for child in children {
+    if child.func() == parbreak {
+      if row.len() > 0 {
+        rows.push(row.join())
+        row = ()
+      }
+    } else {
+      row.push(child)
+    }
+  }
+
+  if row.len() > 0 {
+    rows.push(row.join())
+  }
+
+  rows
+}
+
+#let title-content(author) = [
+  #text(size: 36pt)[#author]
+]
+
+#let aside-width = (100% - 28pt) / 3
+
+#let aside-offset = aside-width * 2 + 28pt
+
+#let page-grid(doc, author: "Daniel Vianna", aside: lorem(90)) = context {
+  place(top + left, dx: aside-offset)[
+    #box(width: aside-width)[
+      #set text(size: 8.5pt)
+      #set par(justify: true, leading: 0.52em)
+      #aside
+    ]
+  ]
+
+  let cells = (
+    grid.cell(x: 0, colspan: 2)[
+      #title-content(author)
+    ],
+  )
+
+  for (index, row) in content-rows(doc).enumerate() {
+    cells.push(
+      grid.cell(x: 0, colspan: row-span(index))[
+        #metadata(none) #row-marker(index)
+        #row
+      ],
+    )
+  }
+
+  grid(
+    columns: (1fr, 1fr, 1fr),
+    gutter: 14pt,
+    ..cells,
+  )
+}
+
 #let conf(
   author: "Daniel Vianna",
   text-font: "Libertinus Serif",
@@ -28,7 +117,6 @@
     bookmarked: true,
   )
 
-  show title: set text(size: 36pt)
   show heading.where(level: 1): set text(
     font: "Open Sans",
     size: 11pt,
@@ -78,6 +166,5 @@
 
   show link: it => underline(text(fill: navy)[#it])
 
-  title()
-  doc
+  page-grid(doc, author: author)
 }
