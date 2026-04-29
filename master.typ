@@ -36,6 +36,7 @@
     fill: blue,
   )
   show heading.where(level: 1): smallcaps
+  show heading.where(level: 1): it => pad(top: 20pt, it)
 
   show heading.where(level: 2): it => {
     if not it.body.has("children") { return it }
@@ -65,6 +66,7 @@
     }
     styled-children.join()
   }
+  show heading.where(level: 2): it => pad(top: 10pt, it)
 
   show heading.where(level: 4): set text(
     font: "Open Sans",
@@ -72,6 +74,7 @@
     weight: "extralight",
     fill: luma(20%),
   )
+  show heading.where(level: 4): it => pad(top: -2pt, bottom: 10pt, it)
 
   show link: it => underline(text(fill: navy)[#it])
 
