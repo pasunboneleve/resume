@@ -56,20 +56,12 @@
 
 #let aside-offset = aside-width * 2 + 28pt
 
-#let contact-details() = [
-  #set par(justify: false, leading: 0.52em)
-  Mentone, Vic 3194 \
-  #strong[0406 733 384] \
-  #link("mailto:dmlvianna@gmail.com")[#strong[#text("dmlvianna@gmail.com")]] \
-  #link("https://github.com/pasunboneleve")[#text("github.com/pasunboneleve")] \
-  #link("https://boneleve.blog")[#text("boneleve.blog")]
-]
-
-#let page-grid(doc, author: "Daniel Vianna", aside: contact-details()) = context {
+#let page-grid(doc, author: "Daniel Vianna", contact: none) = context {
   place(top + left, dx: aside-offset)[
     #box(width: aside-width)[
-      #set text(size: 10pt)
-      #aside
+      #set text(font: "Open Sans", size: 10pt)
+      #set par(justify: false, leading: 0.52em)
+      #contact
     ]
   ]
 
@@ -97,6 +89,7 @@
 
 #let conf(
   author: "Daniel Vianna",
+  contact: none,
   text-font: "Libertinus Serif",
   doc,
 ) = {
@@ -174,5 +167,5 @@
 
   show link: it => underline(text(fill: navy)[#it])
 
-  page-grid(doc, author: author)
+  page-grid(doc, author: author, contact: contact)
 }

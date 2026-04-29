@@ -1,6 +1,15 @@
 #import "master.typ": conf
 
-#show: conf
+#show: doc => conf(
+  contact: [
+    Mentone, Vic 3194 \
+    #strong[0406 733 384] \
+    #link("mailto:dmlvianna@gmail.com")[#strong[#text("dmlvianna@gmail.com")]] \
+    #link("https://github.com/pasunboneleve")[#text("github.com/pasunboneleve")] \
+    #link("https://boneleve.blog")[#text("boneleve.blog")]
+  ],
+  doc,
+)
 
 === Systems translator and operational optimiser
 
