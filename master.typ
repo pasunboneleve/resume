@@ -35,10 +35,11 @@
 #show title: set text(size: 36pt)
 #show heading.where(level:1): set text(
     font: "Open Sans",
-    size: 13pt,
-    weight: "regular",
+    size: 11pt,
+    weight: "extralight",
     fill: blue
 )
+#show heading.where(level:1): smallcaps
 
 #show heading.where(level:4): set text(
     font: "Open Sans",
@@ -51,7 +52,7 @@
 
 === Systems translator and operational optimiser
 
-= Summary
+= SUMMARY
 
 #summary
 
@@ -66,7 +67,7 @@
 
 = PROFESSIONAL EXPERIENCE
 
-== *PaidRight* — _Senior Data Engineer (Platform Engineering)_
+== PaidRight — _Senior Data Engineer (Platform Engineering)_
 
 ==== Nov 2022 - Oct 2025 | Remote (GCP)
 
@@ -78,7 +79,7 @@ PaidRight is a SaaS platform (GCP) identifying payroll compliance issues through
 
 - The web frontend was slow and buggy. I added OpenTelemetry to the frontend’s client and server. This observability made it possible to pinpoint the performance bottlenecks in the code and fix them.
 
-== Daisee — Lead Software Engineer
+== Daisee — _Lead Software Engineer_
 ==== Apr 2021 - Oct 2022 | Remote (AWS)
 
 Daisee is a SaaS voice analytics platform processing large volumes of audio data into structured insights.
@@ -89,7 +90,7 @@ Daisee is a SaaS voice analytics platform processing large volumes of audio data
 
 - Data Science algorithms were reimplemented by Engineering, creating a responsibility gap when outcomes didn’t match expectations. I created an API for Data Science so their implementation would run in production without Engineering interference. Friction between these teams ceased to be a problem.
 
-== AusNet Services — Operations and Analytics Engineer
+== AusNet Services — _Operations and Analytics Engineer_
 ==== Jul 2018 - Mar 2021 | Melbourne
 
 AusNet distributes electricity to over one million Victorian premises, operating large-scale metering and network data systems (> 1 Petabyte).
@@ -100,7 +101,7 @@ AusNet distributes electricity to over one million Victorian premises, operating
 
 - Estimated voltage at substation can vary abruptly each day, making prioritisation difficult. I designed a sliding window smoothing algorithm that privileged recent estimates over older ones. This made estimates change slowly over time, giving engineers a more stable signal on which to prioritise their work.
 
-== Victorian Centre for Data Insights — Senior Data Analyst
+== Victorian Centre for Data Insights — _Senior Data Analyst_
 ==== Jul 2017 - Jun 2018 | Melbourne
 
 VCDI was designed as an internal consultancy for the Victorian state government. It existed under the Department of Premier and Cabinet.
@@ -111,7 +112,7 @@ VCDI was designed as an internal consultancy for the Victorian state government.
 
 - The analytics grew quickly with junior hires. I mentored new hires on the use of version control, automated tests and modularising code. This improved code quality and reproducibility.
 
-== Bunnings — Data Analyst
+== Bunnings — _Data Analyst_
 ==== Jun 2013 - Jul 2017 | Melbourne
 
 Bunnings is a major home improvement and hardware retail with presence in Australia and New Zealand.
@@ -123,7 +124,7 @@ Bunnings needed to compare different forklift models on their relative safety.
 
 - I worked with external vendors to acquire odometer readings so incident counts could be normalised against actual forklift usage. The more complex forklift model was shown to not differ in safety outcomes to the cheaper ones, preventing unnecessary ~\$15-20M capital and rollout costs.
 
-== Royal Australian College of GPs — Data Analyst
+== Royal Australian College of GPs — _Data Analyst_
 ==== Sep 2011 - Jun 2013 | Melbourne
 
 The RACGP is the main certification body in Australia for General Practitioners.
@@ -136,7 +137,7 @@ The RACGP is the main certification body in Australia for General Practitioners.
 
 = PROJECTS
 
-== devloop — Local development orchestrator (Rust)
+== devloop — _Local development orchestrator (Rust)_
 GitHub
 
 Local development of distributed systems required manual orchestration and brittle scripts.
@@ -145,7 +146,7 @@ Local development of distributed systems required manual orchestration and britt
 
   Enabled fast, consistent local feedback loops for distributed systems under active development.
 
-== dress-rehearsal — Infrastructure validation harness (Rust)
+== dress-rehearsal — _Infrastructure validation harness (Rust)_
 GitHub
 
 Infrastructure changes were validated late, with unclear failure modes and manual cleanup.
@@ -154,7 +155,7 @@ Infrastructure changes were validated late, with unclear failure modes and manua
 
   Made infrastructure behaviour testable before release and reduced risk of production failures.
 
-== Cloud service delivery templates — (AWS & GCP)
+== Cloud service delivery templates — _(AWS & GCP)_
  AWS  GCP
 
 Service setup and delivery patterns were inconsistent and repeated across projects.
