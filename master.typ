@@ -104,6 +104,7 @@
   )
   set text(
     font: text-font,
+    hyphenate: false,
   )
   set par(
     justify: true,
