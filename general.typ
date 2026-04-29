@@ -32,6 +32,21 @@
       #skill-label[Product & Delivery:] Stakeholder~discovery, workflow mapping, operational process design, experimentation support.
     ]
   ],
+  projects: [
+    = PROJECTS
+
+    == #link("https://github.com/pasunboneleve/devloop")[devloop] — Local development orchestrator (Rust)
+
+    Developer workflows rely on many disconnected tools, but orchestration between them is sparse. Devloop is a config‑driven CLI that coordinates processes, propagates state, and automates routine development workflows so developers can focus on building rather than orchestration.
+
+    == #link("https://github.com/pasunboneleve/dress-rehearsal")[dress‑rehearsal] — Infrastructure validation harness (Rust)
+
+    Infrastructure is often deployed iteratively but rarely validated through full creation‑to‑destruction lifecycles. Dress‑rehearsal automates deploy → verify → destroy workflows using isolated state, preserving logs and reducing production risk before release.
+
+    == cloud service delivery templates — #link("https://github.com/pasunboneleve/aws-service-delivery-template")[AWS] & #link("https://github.com/pasunboneleve/gcp-service-delivery-template")[GCP]
+
+    Service delivery patterns are often repeated across projects. These reusable AWS and GCP templates standardise infrastructure, CI/CD, and deployment workflows, accelerating project startup while reducing boilerplate and operational inconsistency.
+  ],
   doc,
 )
 
@@ -125,23 +140,6 @@ The RACGP is the main certification body in Australia for General Practitioners.
 - RACGP membership is renewed annually through mail sent to known GP practices and practitioners. I broadened the discovery of targets by rewriting the queries used in the data preparation. I discovered large numbers of targets that were formerly ignored.
 
 - Call operators made most of the member’s data entry, often copying it from one system to another manually. I automated the data transfers via direct SQL queries, skipping GUIs. Data was validated and corrected before mailouts were made, improving correctness and reducing toil.
-
-= PROJECTS
-
-== #link("https://github.com/pasunboneleve/devloop")[devloop] — Local development orchestrator (Rust)
-
-
-Developer workflows rely on many disconnected tools, but orchestration between them is sparse. Devloop is a config‑driven CLI that coordinates processes, propagates state, and automates routine development workflows so developers can focus on building rather than orchestration.
-
-== #link("https://github.com/pasunboneleve/dress-rehearsal")[dress‑rehearsal] — Infrastructure validation harness (Rust)
-
-
-Infrastructure is often deployed iteratively but rarely validated through full creation‑to‑destruction lifecycles. Dress‑rehearsal automates deploy → verify → destroy workflows using isolated state, preserving logs and reducing production risk before release.
-
-== cloud service delivery templates — #link("https://github.com/pasunboneleve/aws-service-delivery-template")[AWS] & #link("https://github.com/pasunboneleve/gcp-service-delivery-template")[GCP]
-
-
-Service delivery patterns are often repeated across projects. These reusable AWS and GCP templates standardise infrastructure, CI/CD, and deployment workflows, accelerating project startup while reducing boilerplate and operational inconsistency.
 
 = EDUCATION
 

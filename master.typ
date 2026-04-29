@@ -1,95 +1,33 @@
-#let row-marker(index) = label("page-grid-row-" + str(index))
-
-#let row-page(index) = {
-  let marker = row-marker(index)
-  let hits = query(marker)
-
-  if hits.len() > 0 {
-    hits.first().location().page()
-  } else {
-    1
-  }
-}
-
-#let row-span(index) = {
-  let page = row-page(index)
-
-  if page == 1 {
-    2
-  } else {
-    3
-  }
-}
-
-#let content-rows(doc) = {
-  let children = if doc.has("children") {
-    doc.children
-  } else {
-    (doc,)
-  }
-  let rows = ()
-  let row = ()
-
-  for child in children {
-    if child.func() == parbreak {
-      if row.len() > 0 {
-        rows.push(row.join())
-        row = ()
-      }
-    } else {
-      row.push(child)
-    }
-  }
-
-  if row.len() > 0 {
-    rows.push(row.join())
-  }
-
-  rows
-}
-
 #let title-content(author) = [
   #text(size: 36pt)[#author]
 ]
 
-#let aside-width = (100% - 28pt) / 3
-
-#let aside-offset = aside-width * 2 + 28pt
-
-#let page-grid(doc, author: "Daniel Vianna", contact: none) = context {
-  place(top + left, dx: aside-offset)[
-    #box(width: aside-width)[
-      #set text(font: "Open Sans", size: 10pt)
-      #set par(justify: false, leading: 0.52em)
-      #contact
-    ]
-  ]
-
-  let cells = (
-    grid.cell(x: 0, colspan: 2)[
-      #title-content(author)
-    ],
-  )
-
-  for (index, row) in content-rows(doc).enumerate() {
-    cells.push(
-      grid.cell(x: 0, colspan: row-span(index))[
-        #metadata(none) #row-marker(index)
-        #row
-      ],
-    )
-  }
-
+#let page-grid(
+  doc,
+  author: "Daniel Vianna",
+  contact: none,
+  projects: none,
+) = context {
   grid(
     columns: (1fr, 1fr, 1fr),
     gutter: 14pt,
-    ..cells,
+    grid.cell(colspan: 2)[
+      #title-content(author)
+      #doc
+    ],
+    grid.cell(x: 2)[
+      #set text(font: "Open Sans", size: 10pt)
+      #set par(justify: false, leading: 0.52em)
+      #contact
+      #projects
+    ],
   )
 }
 
 #let conf(
   author: "Daniel Vianna",
   contact: none,
+  projects: none,
   text-font: "Open Sans",
   doc,
 ) = {
@@ -167,5 +105,5 @@
 
   show link: it => underline(stroke: luma(80%), text(fill: navy)[#it])
 
-  page-grid(doc, author: author, contact: contact)
+  page-grid(doc, author: author, contact: contact, projects: projects)
 }
