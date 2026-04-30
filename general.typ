@@ -12,15 +12,27 @@
 
 #let skill-label(body) = box(strong(body))
 
+#let contact-icon(path, url) = link(url)[
+  #image(path, width: 10pt)
+]
+
+#let contact-icons() = grid(
+  columns: (10pt, 10pt),
+  gutter: 4pt,
+  contact-icon("assets/github.svg", "https://github.com/pasunboneleve"),
+  contact-icon("assets/linkedin.svg", "https://www.linkedin.com/in/dmvianna/"),
+)
+
 #show: doc => conf(
   contact: [
     Mentone, Vic 3194 \
     #link("tel:+61406733384")[#strong[0406 733 384]] \
     #link("mailto:dmlvianna@gmail.com")[#strong[#text("dmlvianna@gmail.com")]] \
-    #link("https://github.com/pasunboneleve")[#text("github.com/pasunboneleve")] \
+    #contact-icons() \
     #link("https://boneleve.blog")[#text("boneleve.blog")]
   ],
   skills: [
+    #v(20pt)
     #section-title[TECHNICAL SKILLS]
 
     #v(8pt)
