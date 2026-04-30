@@ -100,12 +100,14 @@ My work combines discovery, stakeholder translation, and hands‑on systems desi
 #set pad(bottom: 10pt)
 = CORE COMPETENCIES
 
+#text(size: 10pt)[
 - *Systems Discovery & Process Mapping* – reverse engineering workflows, surfacing hidden constraints.
 - *Product & Stakeholder Translation* – translating business needs into practical technical pathways.
 - *Workflow & Operational Optimisation* – reducing friction, improving throughput, scaling delivery.
 - *Platform & Systems Design* – reusable systems, service boundaries, maintainable architectures.
 - *Delivery Acceleration* – CI/CD, local validation, faster iteration.
 - *Observability & Reliability* – operational visibility, measurable system confidence.
+]
 
 = PROFESSIONAL EXPERIENCE
 
