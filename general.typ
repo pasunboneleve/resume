@@ -17,10 +17,11 @@
 ]
 
 #let contact-icons() = grid(
-  columns: (10pt, 10pt),
+  columns: (10pt, 10pt, 10pt),
   gutter: 4pt,
   contact-icon("assets/github.svg", "https://github.com/pasunboneleve"),
   contact-icon("assets/linkedin.svg", "https://www.linkedin.com/in/dmvianna/"),
+  contact-icon("assets/web.svg", "https://boneleve.blog"),
 )
 
 #show: doc => conf(
@@ -28,8 +29,7 @@
     Mentone, Vic 3194 \
     #link("tel:+61406733384")[#strong[0406 733 384]] \
     #link("mailto:dmlvianna@gmail.com")[#strong[#text("dmlvianna@gmail.com")]] \
-    #contact-icons() \
-    #link("https://boneleve.blog")[#text("boneleve.blog")]
+    #contact-icons()
   ],
   skills: [
     #v(20pt)
