@@ -88,6 +88,7 @@
     it
   }
 
+  show heading.where(level: 2): set text(size: 11pt)
   show heading.where(level: 2): it => {
     if not it.body.has("children") { return it }
 
@@ -105,7 +106,7 @@
         styled-children.push(
           text(
             style: "italic",
-            size: 12pt,
+            size: 10pt,
             fill: luma(5%),
             child,
           ),
