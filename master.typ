@@ -1,6 +1,8 @@
 #let title-content(author, subtitle) = [
   #text(size: 36pt)[#author]
-  #heading(level: 2, subtitle)
+  #v(-25pt)
+  #text(size: 10pt, weight: "regular", fill: luma(45%))[#subtitle]
+  #v(6pt)
 ]
 
 #let page-grid(
