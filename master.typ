@@ -128,7 +128,7 @@
     weight: "extralight",
     fill: luma(20%),
   )
-  show heading.where(level: 4): it => pad(top: -2pt, bottom: 10pt, it)
+  show heading.where(level: 4): it => pad(top: -10pt, bottom: 10pt, it)
 
   show link: it => underline(stroke: luma(80%), text(fill: navy)[#it])
 
