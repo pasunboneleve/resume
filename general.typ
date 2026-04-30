@@ -79,11 +79,11 @@
   education: [
     #section-title[EDUCATION]
 
-    PhD, Neuroscience | University of São Paulo
+    #strong[PhD, Neuroscience] University~of~São~Paulo
 
-    MSc, Neuroscience | University of São Paulo
+    #strong[MSc, Neuroscience] University~of~São~Paulo
 
-    BPsych, Psychology | PUC‑Rio
+    #strong[BPsych, Psychology] Pontifícia Universidade Católica do Rio de Janeiro
   ],
   doc,
 )
