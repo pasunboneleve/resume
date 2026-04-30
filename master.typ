@@ -1,10 +1,12 @@
-#let title-content(author) = [
+#let title-content(author, subtitle) = [
   #text(size: 36pt)[#author]
+  #heading(level: 2, subtitle)
 ]
 
 #let page-grid(
   doc,
   author: "Daniel Vianna",
+  subtitle: "Systems translator and operational optimiser",
   contact: none,
   skills: none,
   projects: none,
@@ -14,7 +16,7 @@
     columns: (1fr, 1fr, 1fr),
     gutter: 14pt,
     grid.cell(colspan: 2)[
-      #title-content(author)
+      #title-content(author, subtitle)
       #doc
     ],
     grid.cell(x: 2)[
@@ -32,6 +34,7 @@
 
 #let conf(
   author: "Daniel Vianna",
+  subtitle: "Systems translator and operational optimiser",
   contact: none,
   skills: none,
   projects: none,
@@ -130,6 +133,7 @@
   page-grid(
     doc,
     author: author,
+    subtitle: subtitle,
     contact: contact,
     skills: skills,
     projects: projects,

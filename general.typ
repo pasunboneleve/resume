@@ -12,6 +12,11 @@
 
 #let skill-label(body) = box(strong(body))
 
+#let subtitle = "Systems translator and operational optimiser"
+#let utm-campaign = "systems-translator-operational-optimiser"
+#let resume-date = datetime.today().display()
+#let blog-url = "https://boneleve.blog?utm_source=resume&utm_medium=pdf&utm_campaign=" + utm-campaign + "&utm_content=blog-icon&utm_term=" + resume-date
+
 #let contact-icon(path, url) = link(url)[
   #image(path, width: 10pt)
 ]
@@ -21,10 +26,11 @@
   gutter: 4pt,
   contact-icon("assets/github.svg", "https://github.com/pasunboneleve"),
   contact-icon("assets/linkedin.svg", "https://www.linkedin.com/in/dmvianna/"),
-  contact-icon("assets/web.svg", "https://boneleve.blog"),
+  contact-icon("assets/web.svg", blog-url),
 )
 
 #show: doc => conf(
+  subtitle: subtitle,
   contact: [
     Mentone, Vic 3194 \
     #link("tel:+61406733384")[#strong[0406 733 384]] \
@@ -81,8 +87,6 @@
   ],
   doc,
 )
-
-=== Systems translator and operational optimiser
 
 #set pad(bottom: 10pt)
 = SUMMARY
