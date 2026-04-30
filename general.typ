@@ -164,9 +164,8 @@ Bunnings is a major home improvement and hardware retail with presence in Austra
 - The National Safety team needed to report on incident counts correct to the minute each end of month. I replaced the original Excel download‑pivot‑add latest incidents by hand workflow with a web dashboard, where clicking on each count opened a modal with a list of incidents and their respective details. Reports were accurate with less heroics, and the safety managers could focus less on numbers and more on story and policy.
 
 - The National Learning & Development team used VBA scripts and monthly Excel reports to match staff with their training needs. I moved that workflow to Jupyter notebooks & Python, speeding up delivery, improving code reusability and making it possible to use the latest data directly from databases.
-Bunnings needed to compare different forklift models on their relative safety.
 
-- I worked with external vendors to acquire odometer readings so incident counts could be normalised against actual forklift usage. The more complex forklift model was shown to not differ in safety outcomes to the cheaper ones, preventing unnecessary ~\$15‑20M capital and rollout costs.
+- Bunnings needed to compare different forklift models on their relative safety. I worked with external vendors to acquire odometer readings so incident counts could be normalised against actual forklift usage. The more complex forklift model was shown to not differ in safety outcomes to the cheaper ones, preventing unnecessary ~\$15‑20M capital and rollout costs.
 
 == Royal Australian College of GPs — Data Analyst
 ==== Sep 2011 - Jun 2013 | Melbourne
