@@ -59,6 +59,8 @@
       #skill-label[Practices:] TDD, Idempotency, Testable Architecture.
 
       #skill-label[Product & Delivery:] Stakeholder~discovery, workflow mapping, operational process design, experimentation support.
+
+      #skill-label[Data Engineering:] Spark, BigQuery, orchestration workflows, ingestion pipelines, ETL/ELT.
     ]
   ],
   projects: [
