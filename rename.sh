@@ -1,1 +1,1 @@
-typst compile general.typ  "$(date +%F) - Resume.pdf"
+typst compile general.typ  "Vianna - $(date +%F) - Resume.pdf"
