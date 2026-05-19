@@ -103,12 +103,12 @@ My strongest work sits at the intersection of software engineering, data enginee
 = CORE COMPETENCIES
 
 #text(size: 10pt)[
-- *Systems Discovery & Process Mapping* – reverse engineering workflows, surfacing hidden constraints.
-- *Product & Stakeholder Translation* – translating business needs into practical technical pathways.
-- *Workflow & Operational Optimisation* – reducing friction, improving throughput, scaling delivery.
-- *Platform & Systems Design* – reusable systems, service boundaries, maintainable architectures.
-- *Delivery Acceleration* – CI/CD, local validation, faster iteration.
-- *Observability & Reliability* – operational visibility, measurable system confidence.
+- *Systems Discovery & Process Mapping* – tracing workflows, data lineage, ownership, and hidden constraints.
+- *Software & Data Engineering* – Python, SQL, TypeScript, Spark, APIs, data pipelines, and application code.
+- *Platform & Delivery Engineering* – CI/CD, Kubernetes, cloud services, local validation, faster feedback loops.
+- *Observability & Reliability* – OpenTelemetry, tracing, metrics, bottleneck diagnosis, operational confidence.
+- *Stakeholder Translation* – turning business needs, feasibility gaps, and technical constraints into delivery choices.
+- *Cost & Workflow Reduction* – replacing manual processes, reducing cloud spend, and removing repeated toil.
 ]
 
 = PROFESSIONAL EXPERIENCE
