@@ -46,7 +46,7 @@
   section-title-size: 10pt,
   role-size: 9.5pt,
   grid-gutter: 12pt,
-  sidebar-column: 0.74fr,
+  sidebar-column: 0.82fr,
   accent-fill: accent-fill,
   muted-fill: muted-fill,
   role-fill: muted-fill,
@@ -95,9 +95,10 @@
 
     Infrastructure is often deployed iteratively but rarely validated through full creation‑to‑destruction lifecycles. Dress‑rehearsal automates deploy → verify → destroy workflows using isolated state, preserving logs and reducing production risk before release.
 
-    == cloud service delivery templates — #link("https://github.com/pasunboneleve/aws-service-delivery-template")[AWS] & #link("https://github.com/pasunboneleve/gcp-service-delivery-template")[GCP]
+    == #link("https://github.com/pasunboneleve/oiticica-style")[oiticica-style] — Codex writing skills from José Oiticica
 
-    Service delivery patterns are often repeated across projects. These reusable AWS and GCP templates standardise infrastructure, CI/CD, and deployment workflows, accelerating project startup while reducing boilerplate and operational inconsistency.
+    Most writing advice is too broad for agents to apply consistently. Oiticica-style turns José Oiticica’s Manual of Style into focused Codex skills with rules, examples, and evals for diagnosing concrete prose faults.
+
   ],
   education: [
     #section-title[EDUCATION]
