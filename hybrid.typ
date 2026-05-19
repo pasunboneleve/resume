@@ -93,11 +93,11 @@
 #set pad(bottom: 10pt)
 = SUMMARY
 
-I make messy systems legible, evolvable, and cheaper to change.
+I make complex systems easier to change, test, and operate.
 
-I reverse engineer technical and operational workflows, expose hidden constraints, and redesign systems to reduce friction, accelerate feedback, and improve adaptability.
+I work across product discovery, data pipelines, platform architecture, and application code, usually where business workflows and technical systems have grown tangled. I map the real process, find the stable boundaries, and turn them into tested services, faster feedback loops, and clearer operational signals.
 
-My work combines discovery, stakeholder translation, and hands‑on systems design to create scalable pathways that enable teams to operate more effectively.
+My strongest work sits at the intersection of software engineering, data engineering, and stakeholder translation: replacing manual workflows, reducing cloud and delivery costs, improving observability, and helping teams make better technical decisions from messy constraints.
 
 #set pad(bottom: 10pt)
 = CORE COMPETENCIES
