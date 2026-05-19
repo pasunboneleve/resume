@@ -123,6 +123,8 @@ PaidRight runs a GCP SaaS platform that compares payroll data with enterprise ag
 
 - Customer CSV data was still uploaded by customer staff or sales. I deployed Airbyte to Kubernetes with Helm, giving non-technical staff a low-code path to configure SaaS ingestion and remove routine manual uploads.
 
+- A single Nix flake wrapped database, web server, Spark, and frontend work into one slow build path. I split it into independently deployable components, cutting build and test feedback from tens of minutes to 2-5 minutes.
+
 - The React frontend and React Router server were slow, but the team lacked request-level evidence. I instrumented both with OpenTelemetry and sent traces to Honeycomb, exposing the bottlenecks behind page-load regressions.
 
 == Daisee — Lead Software Engineer
@@ -134,9 +136,11 @@ Daisee runs an AWS SaaS voice analytics platform that turns call-centre audio in
 
 - A single PostgreSQL instance handled transformation and presentation, so each ingestion run degraded the frontend. We moved raw data to S3, passed work through SQS-backed microservices, and kept presentation data in separate PostgreSQL stores, separating processing load from the user interface.
 
-- Each customer had an independent deployment, making version control and deployment governance brittle. We moved Lisa to a multi-tenant PostgreSQL architecture with row-level security; monthly change volume rose from about 10 to over 300, deployments rose from 4-8 to 50, and AWS costs fell 70%.
+- Each customer had an independent deployment, making version control and deployment governance brittle. We moved Lisa to a multi-tenant PostgreSQL architecture with row-level security; monthly change volume rose from about 10 to over 300, deployments rose from 4-8 to 50, and AWS costs fell from about AUD \$16k/month to \$4.5k/month.
 
 - Data Science wrote tokenisers and embedding algorithms in Python/NumPy, then Engineering reimplemented them in Haskell or Python, creating mismatches no team owned cleanly. I built an API that ran Data Science code in production as pure functions, preserving model behaviour and removing the reimplementation handoff.
+
+- I mentored five graduate engineers through test watch loops, minimal fixtures, and reviewable pull requests, helping them become independent contributors without lowering the team's delivery standard.
 
 == AusNet Services — Operations and Analytics Engineer
 ==== Jul 2018 - Mar 2021 | Melbourne
@@ -156,7 +160,7 @@ VCDI was an internal data consultancy for the Victorian Department of Premier an
 
 - The Victorian Cladding Taskforce needed a defensible list of buildings with possible external flammable cladding. I used G-NAF, regex, and join optimisation to normalise addresses and deduplicate records; the final estimate fell from 8,000 buildings to 1,400, avoiding \$130M-\$230M+ in government and contractor expenditure.
 
-- Government projects often arrived with clear goals but unresolved feasibility, data access, or governance constraints. I mapped those gaps early with stakeholders so teams could choose whether to change scope, change delivery path, or stop.
+- Government projects often arrived with clear goals but unresolved feasibility, data access, or governance constraints. I mapped data lineage across internal teams, vendors, and inaccessible systems so stakeholders could choose whether to change scope, change delivery path, or stop.
 
 - As the analytics team grew, junior analysts needed repeatable engineering habits. I mentored them in Git, pytest, behave, Docker-based tooling, and modular code, improving reproducibility across shared analysis work.
 
