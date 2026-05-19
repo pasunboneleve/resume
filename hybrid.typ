@@ -1,12 +1,18 @@
 #import "master.typ": conf
 
+#let body-font = ("Garamond Libre", "Libertinus Serif", "TeX Gyre Pagella")
+#let sans-font = body-font
+#let accent-fill = rgb("#555")
+#let muted-fill = rgb("#555")
+
 #let section-title(body) = block[
   #text(
-    font: "Open Sans",
+    font: sans-font,
     size: 10pt,
-    weight: "bold",
-    fill: blue,
-    body,
+    weight: "regular",
+    fill: accent-fill,
+    tracking: 0.1em,
+    upper(body),
   )
 ]
 
@@ -31,6 +37,21 @@
 
 #show: doc => conf(
   subtitle: subtitle,
+  text-font: body-font,
+  sans-font: sans-font,
+  body-size: 9.5pt,
+  sidebar-size: 9.5pt,
+  title-size: 31pt,
+  subtitle-size: 9.5pt,
+  section-title-size: 10pt,
+  role-size: 9.5pt,
+  grid-gutter: 12pt,
+  sidebar-column: 0.74fr,
+  accent-fill: accent-fill,
+  muted-fill: muted-fill,
+  role-fill: muted-fill,
+  date-fill: muted-fill,
+  header-fill: accent-fill,
   contact: [
     Mentone, Vic 3194 \
     #link("tel:+61406733384")[#strong[0406 733 384]] \
@@ -42,8 +63,8 @@
     #section-title[TECHNICAL SKILLS]
 
     #v(8pt)
-    #text(fill: luma(45%))[
-      #set par(justify: true)
+    #text(fill: muted-fill)[
+      #set par(justify: false)
       #skill-label[Languages:] Python (Expert), SQL (Expert), Scala, TypeScript, Haskell, Bash.
 
       #skill-label[Developer Experience:] CI/CD design, local testing workflows, service boundary design.

@@ -1,11 +1,16 @@
 #import "master.typ": conf
 
+#let body-font = "Open Sans"
+#let sans-font = "Open Sans"
+#let accent-fill = blue
+#let muted-fill = luma(45%)
+
 #let section-title(body) = block[
   #text(
-    font: "Open Sans",
+    font: sans-font,
     size: 10pt,
     weight: "bold",
-    fill: blue,
+    fill: accent-fill,
     body,
   )
 ]
@@ -31,6 +36,10 @@
 
 #show: doc => conf(
   subtitle: subtitle,
+  text-font: body-font,
+  sans-font: sans-font,
+  accent-fill: accent-fill,
+  muted-fill: muted-fill,
   contact: [
     Mentone, Vic 3194 \
     #link("tel:+61406733384")[#strong[0406 733 384]] \
@@ -42,7 +51,7 @@
     #section-title[TECHNICAL SKILLS]
 
     #v(8pt)
-    #text(fill: luma(45%))[
+    #text(fill: muted-fill)[
       #set par(justify: true)
       #skill-label[Languages:] Python (Expert), SQL (Expert), Scala, TypeScript, Haskell, Bash.
 
