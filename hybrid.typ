@@ -117,67 +117,67 @@ My work combines discovery, stakeholder translation, and hands‑on systems desi
 
 ==== Nov 2022 - Oct 2025 | Remote (GCP)
 
-PaidRight is a SaaS platform (GCP) identifying payroll compliance issues through large‑scale data processing.
+PaidRight runs a GCP SaaS platform that compares payroll data with enterprise agreements to identify underpayments and overpayments at scale.
 
-- Our Scala/Spark model could not be tested before deployment. I decoupled its core and created mocks providing test inputs and expected outputs. Engineers could test with a local Spark instance before deploying.
+- The Scala/Spark payroll model could not be tested before deployment. I separated the model from its cloud runtime, added mocks for inputs and expected outputs, and gave engineers a local Spark path for testing before release.
 
-- Customer CSV data had to be uploaded manually by their staff or our sales people. I added the Airbyte Helm package to our Kubernetes cluster, an off‑the‑shelf low‑code ingestion solution that could be configured by non technical staff. Automated ingestion became possible.
+- Customer CSV data was still uploaded by customer staff or sales. I deployed Airbyte to Kubernetes with Helm, giving non-technical staff a low-code path to configure SaaS ingestion and remove routine manual uploads.
 
-- The web frontend was slow and buggy. I added OpenTelemetry to the frontend’s client (React) and server (React Router), with Honeycomb as the visualisation and storage layer. This observability made it possible to pinpoint the performance bottlenecks in the code and fix them.
+- The React frontend and React Router server were slow, but the team lacked request-level evidence. I instrumented both with OpenTelemetry and sent traces to Honeycomb, exposing the bottlenecks behind page-load regressions.
 
 == Daisee — Lead Software Engineer
 ==== Apr 2021 - Oct 2022 | Remote (AWS)
 
-Daisee is a SaaS voice analytics platform processing large volumes of audio data into structured insights.
+Daisee runs an AWS SaaS voice analytics platform that turns call-centre audio into searchable transcripts, agent scores, and structured conversation themes.
 
-- The voice analytics pipeline was tightly coupled to its database model, hampering product evolution. I reverse engineered and documented its implementation. This empowered the team to understand the limitations of the current product and devise solutions.
+- The voice analytics pipeline was tightly coupled to its database model, blocking product changes. I reverse engineered Lisa, documented the dependency graph, and gave the team a concrete basis for redesigning its infrastructure.
 
-- Data transformation and presentation was done in a single PostgreSQL instance, degrading frontend performance every time data was ingested and processed. We replaced that infrastructure with S3 buckets for raw data, SQS queues for message passing between microservices and independent PostgreSQL instances to hold per-customer configuration and presentation layers. This decoupled processing from presentation, making the frontend snappy.
+- A single PostgreSQL instance handled transformation and presentation, so each ingestion run degraded the frontend. We moved raw data to S3, passed work through SQS-backed microservices, and kept presentation data in separate PostgreSQL stores, separating processing load from the user interface.
 
-- Platform deployments were done independently for each customer, making version control and deployment governance difficult. We moved it to a multi‑tenant architecture, using row-level security (PostgreSQL) to maintain customer separation. Monthly iteration rate went from ~10 code changes to over 300; from 4‑8 deployments to 50; AWS infrastructure bill was reduced 70%.
+- Each customer had an independent deployment, making version control and deployment governance brittle. We moved Lisa to a multi-tenant PostgreSQL architecture with row-level security; monthly change volume rose from about 10 to over 300, deployments rose from 4-8 to 50, and AWS costs fell 70%.
 
-- Tokenisers and embeddings algorithms (Python/Numpy) were reimplemented by Engineering (Haskell/Python), creating a responsibility gap when outcomes didn’t match expectations. I created an API for Data Science so their implementation would run in production as pure functions, without Engineering interference. Friction between these teams ceased to be a problem.
+- Data Science wrote tokenisers and embedding algorithms in Python/NumPy, then Engineering reimplemented them in Haskell or Python, creating mismatches no team owned cleanly. I built an API that ran Data Science code in production as pure functions, preserving model behaviour and removing the reimplementation handoff.
 
 == AusNet Services — Operations and Analytics Engineer
 ==== Jul 2018 - Mar 2021 | Melbourne
 
-AusNet distributes electricity to over one million Victorian premises, operating large‑scale metering and network data systems (> 1 Petabyte).
+AusNet distributes electricity to over one million Victorian premises and operates large-scale metering and network data systems (> 1 Petabyte).
 
-- Engineers needed to know how much solar generation could each substation (transformer) sustain safely. I devised a regression algorithm (scikit-learn, Python) that predicted voltage at the substation in response to known solar generation by customers. Engineers used the fullstack app (Oracle, PHP, Python, MapBox, AngularJS) to define how much solar generation could be permitted to be installed in each substation’s local grid.
+- Engineers needed to know how much solar generation each substation could safely absorb. I built a Python/scikit-learn regression model that predicted transformer voltage from customer solar generation, then surfaced it in an Oracle, PHP, Python, MapBox, and AngularJS application used to set local grid limits.
 
-- Customers could be rewarded instead of charged for their electrical consumption by inverting the polarity of their meters. I designed an algorithm that identified solar generation by its signature curve shape over a day. The algorithm was used to flag non‑solar looking net‑generating customers for further investigation.
+- Inverted meter polarity could make consuming customers look like generators and earn credits instead of charges. I wrote a Python algorithm that recognised solar generation by its daily curve shape and flagged net-generating customers whose profiles did not look solar.
 
-- Estimated voltage at substation can vary abruptly each day, making prioritisation difficult. I designed a sliding window smoothing algorithm (pandas, Python) that privileged recent estimates over older ones. This made estimates change slowly over time, giving engineers a more stable signal on which to prioritise their work.
+- Daily substation voltage estimates moved too abruptly for planning. I used pandas to build a sliding-window smoothing algorithm that weighted recent estimates more heavily, giving engineers a steadier signal for prioritising network work.
 
 == Victorian Centre for Data Insights — Senior Data Analyst
 ==== Jul 2017 - Jun 2018 | Melbourne
 
-VCDI was designed as an internal consultancy for the Victorian state government. It existed under the Department of Premier and Cabinet.
+VCDI was an internal data consultancy for the Victorian Department of Premier and Cabinet.
 
-- The Victorian Cladding Taskforce needed to identify buildings that had been built with external flammable cladding. I normalised street addresses and deduplicated datasets using the G-NAF dataset and regex. 1,400 buildings were identified, less than the original 8,000 estimate, leading to $130M–$230M+ avoided government and contractor expenditure.
+- The Victorian Cladding Taskforce needed a defensible list of buildings with possible external flammable cladding. I used G-NAF, regex, and join optimisation to normalise addresses and deduplicate records; the final estimate fell from 8,000 buildings to 1,400, avoiding \$130M-\$230M+ in government and contractor expenditure.
 
-- Projects were clear on goals and vision but unclear on feasibility and implementation. I identified governance and implementation gaps early in conversations. This empowered stakeholders to make informed decisions.
+- Government projects often arrived with clear goals but unresolved feasibility, data access, or governance constraints. I mapped those gaps early with stakeholders so teams could choose whether to change scope, change delivery path, or stop.
 
-- The analytics grew quickly with junior hires. I mentored new hires on the use of version control (git), automated tests (pytest, behave) and modularising code. This improved code quality and reproducibility.
+- As the analytics team grew, junior analysts needed repeatable engineering habits. I mentored them in Git, pytest, behave, Docker-based tooling, and modular code, improving reproducibility across shared analysis work.
 
 == Bunnings — Data Analyst
 ==== Jun 2013 - Jul 2017 | Melbourne
 
-Bunnings is a major home improvement and hardware retail with presence in Australia and New Zealand.
+Bunnings is a major home improvement and hardware retailer across Australia and New Zealand.
 
-- The National Safety team needed to report on incident counts correct to the minute each end of month. I replaced the original Excel download‑pivot‑add latest incidents by hand workflow with a web dashboard (AngularJS, Sails.js), where clicking on each count opened a modal with a list of incidents and their respective details. Reports were accurate with less heroics, and the safety managers could focus less on numbers and more on story and policy.
+- The National Safety team needed end-of-month incident counts accurate to the minute, but the workflow depended on Excel downloads, pivots, and manual late edits. I built an AngularJS and Sails.js dashboard with live counts, period comparisons, divisional drilldowns, and detail dialogs for each count.
 
-- The National Learning & Development team used VBA scripts and monthly Excel reports to match staff with their training needs. I moved that workflow to Jupyter notebooks & Python, speeding up delivery, improving code reusability and making it possible to use the latest data directly from databases.
+- The National Learning & Development team used VBA scripts and monthly Excel files to match staff with training needs. I moved the workflow to Python and Jupyter notebooks backed by database queries, making reports reproducible and current at run time.
 
-- Bunnings needed to compare different forklift models on their relative safety. I worked with external vendors to acquire odometer readings so incident counts could be normalised against actual forklift usage. The more complex forklift model was shown to not differ in safety outcomes to the cheaper ones, preventing unnecessary ~\$15‑20M capital and rollout costs.
+- Bunnings needed to compare forklift models by safety, not raw incident counts. I worked with vendors to acquire odometer readings, normalised incidents by actual usage, and showed the more complex model did not improve safety enough to justify ~\$15-20M in capital and rollout costs.
 
 == Royal Australian College of GPs — Data Analyst
 ==== Sep 2011 - Jun 2013 | Melbourne
 
-The RACGP is the main certification body in Australia for General Practitioners.
+The RACGP is Australia's main certification body for general practitioners.
 
-- The RACGP needed to understand its member base in order to create relevant programs and content. I surfaced statistical data from its database (MS SQL Server), identifying membership gaps among fertile age women and older medical practitioners of both genders. That insight guided the ensuing editorial focus of its publications.
+- The RACGP needed clearer member segments for programs and publications. I queried MS SQL Server data and identified membership gaps among women of childbearing age and older practitioners of both genders, guiding the editorial focus of later publications.
 
-- RACGP membership is renewed annually through mail sent to known GP practices and practitioners. I broadened the discovery of targets by rewriting the queries used in the data preparation. I discovered large numbers of targets that were formerly ignored (R/ggplot2).
+- Annual membership renewal depended on mailouts to known GP practices and practitioners. I rewrote the preparation queries, broadened target discovery, and used R/ggplot2 to visualise newly found populations that previous reporting had missed.
 
-- Call operators made most of the member’s data entry, often copying it from one system to another manually. I automated the data transfers via direct SQL queries, skipping GUIs. Data was validated and corrected (Python/Pandas) before mailouts were made, improving correctness and reducing toil.
+- Call operators copied member data manually between systems before mailouts. I automated transfers with direct SQL queries and validated data with Python/pandas, reducing manual entry and catching errors before campaign lists were sent.
