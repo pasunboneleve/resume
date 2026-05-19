@@ -12,8 +12,8 @@
 
 #let skill-label(body) = box(strong(body))
 
-#let subtitle = "Systems translator and operational optimiser"
-#let utm-campaign = "systems-translator-operational-optimiser"
+#let subtitle = "Software and Data Engineer"
+#let utm-campaign = "software-and-data-engineer"
 #let resume-date = datetime.today().display()
 #let blog-url = "https://boneleve.blog?utm_source=resume&utm_medium=pdf&utm_campaign=" + utm-campaign + "&utm_content=blog-icon&utm_term=" + resume-date
 
