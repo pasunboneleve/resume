@@ -10,6 +10,7 @@ Typst sources for Daniel Vianna's resumes and cover letters.
 - `typst/publications/` holds publication-list sources.
 - `assets/` holds shared icons and images.
 - `docs/references/` holds background reference material that may support tailored resumes or cover letters.
+- `references/` holds canonical bibliographic data files.
 - `output/resumes/` holds generated resume PDFs.
 - `output/cover-letters/` holds generated cover-letter PDFs.
 - `output/publications/` holds generated publication-list PDFs.
@@ -38,7 +39,7 @@ Use a fixed output date:
 RESUME_DATE=2026-05-21 scripts/build-documents.sh resumes
 ```
 
-The script writes named PDFs to `output/resumes/` and `output/cover-letters/`.
+The script writes named PDFs to `output/resumes/`, `output/cover-letters/`, and `output/publications/`.
 
 ## Editor Use
 
