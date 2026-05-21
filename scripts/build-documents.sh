@@ -8,8 +8,9 @@ target="${1:-all}"
 
 resume_output="$repo_root/output/resumes"
 cover_letter_output="$repo_root/output/cover-letters"
+publication_output="$repo_root/output/publications"
 
-mkdir -p "$resume_output" "$cover_letter_output"
+mkdir -p "$resume_output" "$cover_letter_output" "$publication_output"
 
 compile() {
   local source="$1"
@@ -43,12 +44,19 @@ build_traild_cover_letter() {
     "output/cover-letters/Vianna - $build_date - Traild - Senior Software Engineer - Cover Letter.pdf"
 }
 
+build_publications() {
+  compile \
+    "typst/publications/publications.typ" \
+    "output/publications/Vianna - $build_date - Publications.pdf"
+}
+
 case "$target" in
   all)
     build_general
     build_boring
     build_hybrid
     build_traild_cover_letter
+    build_publications
     ;;
   resumes)
     build_general
@@ -57,6 +65,9 @@ case "$target" in
     ;;
   cover-letters)
     build_traild_cover_letter
+    ;;
+  publications)
+    build_publications
     ;;
   general)
     build_general
@@ -72,7 +83,7 @@ case "$target" in
     ;;
   *)
     cat >&2 <<'USAGE'
-Usage: scripts/build-documents.sh [all|resumes|cover-letters|general|boring|hybrid|traild-cover-letter]
+Usage: scripts/build-documents.sh [all|resumes|cover-letters|publications|general|boring|hybrid|traild-cover-letter]
 
 Set RESUME_DATE=YYYY-MM-DD to override the date used in output filenames.
 USAGE

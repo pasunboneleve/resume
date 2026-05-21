@@ -7,10 +7,12 @@ Typst sources for Daniel Vianna's resumes and cover letters.
 - `typst/layouts/` holds shared Typst layout code.
 - `typst/resumes/` holds resume sources.
 - `typst/cover-letters/` holds cover-letter sources.
+- `typst/publications/` holds publication-list sources.
 - `assets/` holds shared icons and images.
 - `docs/references/` holds background reference material that may support tailored resumes or cover letters.
 - `output/resumes/` holds generated resume PDFs.
 - `output/cover-letters/` holds generated cover-letter PDFs.
+- `output/publications/` holds generated publication-list PDFs.
 - `archive/drafts/` holds old drafts and imported source files.
 - `scripts/` holds build automation.
 
@@ -27,6 +29,7 @@ Build one target:
 ```bash
 scripts/build-documents.sh hybrid
 scripts/build-documents.sh traild-cover-letter
+scripts/build-documents.sh publications
 ```
 
 Use a fixed output date:

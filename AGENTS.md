@@ -7,10 +7,12 @@ This repository stores resume and cover-letter sources. Keep the root directory 
 - Put reusable Typst layout code in `typst/layouts/`.
 - Put resume Typst sources in `typst/resumes/`.
 - Put cover-letter Typst sources in `typst/cover-letters/`.
+- Put publication-list Typst sources in `typst/publications/`.
 - Put shared icons and images in `assets/`.
 - Put publications, source links, and background reference material in `docs/references/`.
 - Put generated resume PDFs in `output/resumes/`.
 - Put generated cover-letter PDFs in `output/cover-letters/`.
+- Put generated publication-list PDFs in `output/publications/`.
 - Put old drafts, imported DOCX files, and historical references in `archive/drafts/`.
 - Put automation in `scripts/`.
 
@@ -28,7 +30,8 @@ Do not add new `.typ`, `.pdf`, `.docx`, or reference notes to the repository roo
 
 - Resume sources import shared layout with `#import "../layouts/master.typ": ...`.
 - Cover-letter sources import shared layout with `#import "../layouts/master.typ": ...`.
-- Sources under `typst/resumes/` or `typst/cover-letters/` reference shared assets with `../../assets/...`.
+- Publication-list sources import shared layout with `#import "../layouts/master.typ": ...`.
+- Sources under `typst/resumes/`, `typst/cover-letters/`, or `typst/publications/` reference shared assets with `../../assets/...`.
 - Keep document-specific naming in `scripts/build-documents.sh`, not in scattered notes or one-off commands.
 
 ## Validation
