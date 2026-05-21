@@ -1,4 +1,4 @@
-#import "../master.typ": title-content
+#import "../layouts/master.typ": title-content
 
 #let body-font = ("Garamond Libre", "Libertinus Serif", "TeX Gyre Pagella")
 #let accent-fill = rgb("#555")
@@ -38,9 +38,9 @@
 #let contact-icons() = grid(
   columns: (10pt, 10pt, 10pt),
   gutter: 4pt,
-  contact-icon("../assets/github.svg", "https://github.com/pasunboneleve"),
-  contact-icon("../assets/linkedin.svg", "https://www.linkedin.com/in/dmvianna/"),
-  contact-icon("../assets/web.svg", blog-url),
+  contact-icon("../../assets/github.svg", "https://github.com/pasunboneleve"),
+  contact-icon("../../assets/linkedin.svg", "https://www.linkedin.com/in/dmvianna/"),
+  contact-icon("../../assets/web.svg", blog-url),
 )
 
 #let contact-stack = [
