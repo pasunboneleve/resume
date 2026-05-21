@@ -8,12 +8,13 @@ This repository stores resume and cover-letter sources. Keep the root directory 
 - Put resume Typst sources in `typst/resumes/`.
 - Put cover-letter Typst sources in `typst/cover-letters/`.
 - Put shared icons and images in `assets/`.
+- Put publications, source links, and background reference material in `docs/references/`.
 - Put generated resume PDFs in `output/resumes/`.
 - Put generated cover-letter PDFs in `output/cover-letters/`.
 - Put old drafts, imported DOCX files, and historical references in `archive/drafts/`.
 - Put automation in `scripts/`.
 
-Do not add new `.typ`, `.pdf`, or `.docx` files to the repository root.
+Do not add new `.typ`, `.pdf`, `.docx`, or reference notes to the repository root.
 
 ## Build Rules
 
