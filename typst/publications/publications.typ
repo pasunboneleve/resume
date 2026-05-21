@@ -86,14 +86,6 @@
   align(right + top)[#contact-stack],
 )
 
-#v(14pt)
-
-#block(width: 420pt)[
-  #text(size: 9pt, fill: muted-fill)[
-    Peer-reviewed publications from MSc, PhD, and postdoctoral research work.
-  ]
-]
-
 #section-title[MSc Work]
 
 #pub("vianna2001defensive")
